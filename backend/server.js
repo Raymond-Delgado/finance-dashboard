@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
+const expenseRoute = require("./src/routes/expenses");
 
 // Middleware
 app.use(express.json());
+app.use("/api/expenses", expenseRoute);
 
 // Test route
 app.get("/", (req, res) => {
